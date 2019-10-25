@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.Color?>
+
+<StackPane prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.pauleudeline.polocalc.Controleur">
+<VBox alignment="CENTER" spacing="10">
+	<fx:define>
+		<Font fx:id="FONT" size="14"/>
+		<Font fx:id="MINIFONT" size="11"/>
+	</fx:define>
+	
+	<StackPane>
+		<Rectangle fill="TRANSPARENT" stroke="GRAY" width="250" height="50"/>
+		<Text fx:id="output" font="$FONT"/>
+		<Text fx:id="pile" font="$FONT"/>
+	</StackPane>
+	
+	<VBox spacing="10" alignment="CENTER">
+	<HBox spacing="10" alignment="CENTER">
+		<Button text="7" prefWidth="50" font="$FONT" onAction="#processNumpad"/>
+		<Button text="8" prefWidth="50" font="$FONT" onAction="#processNumpad"/>
+		<Button text="9" prefWidth="50" font="$FONT" onAction="#processNumpad"/>
+		<Button text="*" prefWidth="50" font="$FONT" onAction="#processOperateur"/>
+		<Button text="DEL" prefWidth="50" font="$FONT" onAction="#processOperateur"/>
+	</HBox>
+	
+	<HBox spacing="10" alignment="CENTER">
+		<Button text="4" prefWidth="50" font="$FONT" onAction="#processNumpad"/>
+		<Button text="5" prefWidth="50" font="$FONT" onAction="#processNumpad"/>
+		<Button text="6" prefWidth="50" font="$FONT" onAction="#processNumpad"/>
+		<Button text="/" prefWidth="50" font="$FONT" onAction="#processOperateur"/>
+		<Button text="C" prefWidth="50" font="$FONT" onAction="#processOperateur"/>
+	</HBox>
+	
+	<HBox spacing="10" alignment="CENTER">
+		<Button text="1" prefWidth="50" font="$FONT" onAction="#processNumpad"/>
+		<Button text="2" prefWidth="50" font="$FONT" onAction="#processNumpad"/>
+		<Button text="3" prefWidth="50" font="$FONT" onAction="#processNumpad"/>
+		<Button text="+" prefWidth="50" font="$FONT" onAction="#processOperateur"/>
+		<Button text="R" prefWidth="50" font="$FONT" onAction="#processOperateur"/>
+	</HBox>
+	
+	<HBox spacing="10" alignment="CENTER">
+		<Button text="." prefWidth="50" font="$FONT" onAction="#processNumpad"/>
+		<Button text="0" prefWidth="50" font="$FONT" onAction="#processNumpad"/>
+		<Button text="+/-" prefWidth="50" font="$FONT" onAction="#processOperateur"/>
+		<Button text="-" prefWidth="50" font="$FONT" onAction="#processOperateur"/>
+		<Button text="Swap" prefWidth="50" prefHeight="30" font="$MINIFONT" onAction="#processOperateur"/>
+	</HBox>
+	
+	<HBox spacing="10" alignment="CENTER">
+		<Button text="Push" prefWidth="130" font="$FONT" onAction="#processOperateur"/>
+	</HBox>
+	</VBox>
+	
+
+</VBox>
+</StackPane>
