@@ -48,17 +48,14 @@ public class Accumulateur implements IAccumulateur{
 
 	@Override
 	public void add() {
-		try {
-			double a = this.memoire.pop();
-			double b = this.memoire.pop();
+		double a = this.memoire.pop();
+		double b = this.memoire.pop();
 			
-			this.memoire.push(a + b);
-			System.out.println(a + b);
+		this.memoire.push(a + b);
+		System.out.println(a + b);
 			
-		} catch (EmptyStackException e) {
-			System.out.println("L'opération ne peut pas être réalisée car la pile ne possède pas assez d'opérande !");
-			
-		}
+		
+		emetteur.firePropertyChange("value", this.acc, String.valueOf(a + b));
 		
 	}
 
@@ -70,6 +67,8 @@ public class Accumulateur implements IAccumulateur{
 		this.memoire.push(a - b);
 		System.out.println(a - b);
 		
+		emetteur.firePropertyChange("value", this.acc, String.valueOf(a + b));
+		
 	}
 
 	@Override
@@ -80,6 +79,8 @@ public class Accumulateur implements IAccumulateur{
 		this.memoire.push(a * b);
 		System.out.println(a * b);
 		
+		emetteur.firePropertyChange("value", this.acc, String.valueOf(a + b));
+		
 	}
 
 	@Override
@@ -89,6 +90,8 @@ public class Accumulateur implements IAccumulateur{
 		
 		this.memoire.push(a / b);
 		System.out.println(a / b);
+		
+		emetteur.firePropertyChange("value", this.acc, String.valueOf(a + b));
 		
 	}
 

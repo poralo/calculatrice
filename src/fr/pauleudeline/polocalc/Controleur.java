@@ -66,7 +66,7 @@ public class Controleur implements PropertyChangeListener {
 
 	@Override
 	public void propertyChange(PropertyChangeEvent evt) {
-		//this.output.setText((String) evt.getNewValue());
+		this.view.change((String) evt.getNewValue());
 	}
 
 
